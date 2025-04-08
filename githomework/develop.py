@@ -33,7 +33,7 @@ class Student:
         for subject, grade in self.grades.items():
             print(f"  {subject}: {grade}")
         print(f"平均成绩: {self.get_average():.2f}")
-
+#feature1
 
 class StudentManager:
     def __init__(self):
