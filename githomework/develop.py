@@ -19,20 +19,20 @@ class Student:
         else:
             print(f"{self.name}没有{subject}的成绩记录")
 
-    def get_average(self):
-        """计算平均成绩"""
-        if not self.grades:
-            return 0
-        return sum(self.grades.values()) / len(self.grades)
+    # def get_average(self):
+    #     """计算平均成绩"""
+    #     if not self.grades:
+    #         return 0
+    #     return sum(self.grades.values()) / len(self.grades)
 
-    def display_info(self):
-        """显示学生信息"""
-        print(f"\n学生姓名: {self.name}")
-        print(f"学号: {self.student_id}")
-        print("各科成绩:")
-        for subject, grade in self.grades.items():
-            print(f"  {subject}: {grade}")
-        print(f"平均成绩: {self.get_average():.2f}")
+    # def display_info(self):
+    #     """显示学生信息"""
+    #     print(f"\n学生姓名: {self.name}")
+    #     print(f"学号: {self.student_id}")
+    #     print("各科成绩:")
+    #     for subject, grade in self.grades.items():
+    #         print(f"  {subject}: {grade}")
+    #     print(f"平均成绩: {self.get_average():.2f}")
 
 
 class StudentManager:
@@ -60,12 +60,12 @@ class StudentManager:
         """查找学生"""
         return self.students.get(student_id, None)
 
-    def display_all_students(self):
-        """显示所有学生信息"""
-        print("\n=== 所有学生信息 ===")
-        for student in self.students.values():
-            student.display_info()
-        print("===================")
+    # def display_all_students(self):
+    #     """显示所有学生信息"""
+    #     print("\n=== 所有学生信息 ===")
+    #     for student in self.students.values():
+    #         student.display_info()
+    #     print("===================")
 
 
 def main():
@@ -75,7 +75,7 @@ def main():
     manager.add_student("张三", "1001")
     manager.add_student("李四", "1002")
 
-    # 获取学生并添加成绩
+    # # 获取学生并添加成绩
     zhang_san = manager.find_student("1001")
     if zhang_san:
         zhang_san.add_grade("数学", 90)
@@ -87,14 +87,14 @@ def main():
         li_si.add_grade("物理", 92)
 
     # 显示所有学生信息
-    manager.display_all_students()
+    # manager.display_all_students()
 
     # 测试删除功能
     li_si.remove_grade("物理")
     manager.remove_student("1003")  # 不存在的学号
 
     # 再次显示
-    manager.display_all_students()
+    # manager.display_all_students()
 
 
 if __name__ == "__main__":
